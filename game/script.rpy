@@ -26,6 +26,8 @@ label start:
 
     e "I am testing the github stuff."
 
+    e "Let's see if we can make another commit!"
+
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
