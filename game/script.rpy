@@ -28,6 +28,8 @@ label start:
 
     e "Let's see if we can make another commit!"
 
+    e "I like juice."
+
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
