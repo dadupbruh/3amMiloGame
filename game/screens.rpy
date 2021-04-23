@@ -301,38 +301,36 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            imagebutton auto "gui/mainmenu/start_%s.png" action Start()
 
-        else:
+        vbox:
+            xpos gui.navigation_spacing + 20
+            spacing gui.navigation_spacing
+            if not main_menu:
 
-            textbutton _("History") action ShowMenu("history")
+                textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+                textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            imagebutton auto "gui/mainmenu/load_%s.png" action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            imagebutton auto "gui/mainmenu/config_%s.png" action ShowMenu("preferences")
 
-        if _in_replay:
+            if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+                textbutton _("End Replay") action EndReplay(confirm=True)
 
-        elif not main_menu:
+            elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+                textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+            imagebutton auto "gui/mainmenu/about_%s.png" action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            if renpy.variant("pc"):
+                null height 200
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+                imagebutton auto "gui/mainmenu/exit_%s.png" action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -368,15 +366,6 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-
-    if gui.show_name:
-
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
 
 
 style main_menu_frame is empty
