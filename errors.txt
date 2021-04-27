@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 308: u'else' is not a keyword argument or valid child for the vbox statement.
-    else:
-        ^
+File "game/screens.rpy", line 429: Line is indented, but the preceding null statement does not expect a block. Please check this line's indentation.
+    imagebutton auto ("gui/gamemenu/return_%s.png") action Return()  
+    ^
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Sat Apr 24 11:42:00 2021
+Tue Apr 27 19:44:32 2021

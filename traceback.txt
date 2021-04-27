@@ -1,60 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 205, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 379, in script
-    $ __gl_test()
-  File "renpy/common/00start.rpy", line 205, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 379, in script
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 379, in <module>
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 309, in _m1_00gltest__gl_test
-    _gl_performance_test()
-  File "renpy/common/00gltest.rpy", line 334, in _gl_performance_test
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
-AttributeError: 'SWDraw' object has no attribute 'scale_fast'
+  File "renpy/common/00start.rpy", line 210, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 494, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 494, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 504, in _execute_python_hide
+    renpy.load("_reload-2")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 617, in main
-    run(restart)
-  File "renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "renpy/execution.py", line 922, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 205, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 379, in script
-    $ __gl_test()
-  File "renpy/common/00start.rpy", line 205, in script call
-    call _gl_test
-  File "renpy/common/00gltest.rpy", line 379, in script
-    $ __gl_test()
+  File "renpy/common/00start.rpy", line 210, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 494, in script
+    python hide:
   File "renpy/ast.py", line 913, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2111, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gltest.rpy", line 379, in <module>
-    $ __gl_test()
-  File "renpy/common/00gltest.rpy", line 309, in _m1_00gltest__gl_test
-    _gl_performance_test()
-  File "renpy/common/00gltest.rpy", line 334, in _gl_performance_test
-    ui.interact(suppress_underlay=True, suppress_overlay=True)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 2978, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "renpy/display/core.py", line 3477, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2363, in draw_screen
-    renpy.display.draw.draw_screen(surftree)
-  File "renpy/display/swdraw.py", line 869, in draw_screen
-    if self.scale_fast:
-AttributeError: 'SWDraw' object has no attribute 'scale_fast'
+  File "renpy/common/00keymap.rpy", line 494, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 504, in _execute_python_hide
+    renpy.load("_reload-2")
+  File "renpy/loadsave.py", line 767, in load
+    log.unfreeze(roots, label="_after_load")
+  File "renpy/python.py", line 2066, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "renpy/python.py", line 1898, in rollback
+    self.load_failed()
+  File "renpy/python.py", line 1816, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 

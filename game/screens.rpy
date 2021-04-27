@@ -131,12 +131,12 @@ style namebox_label is say_label
 
 
 style window:
-    xalign 0.5
+    xalign 1.0
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.7, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -250,7 +250,7 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
+            xalign 0.7
             yalign 1.0
 
             textbutton _("Back") action Rollback()
@@ -367,6 +367,8 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
+    
+
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -406,7 +408,28 @@ style main_menu_version:
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
+screen game_menunav():
+    add "gui/gamemenu/gamemenu.png"                     
+    vbox:
+        null height 20
+        spacing 25
+        xpos 30
+        imagebutton auto ("gui/gamemenu/history_%s.png") action ShowMenu("history")
+        if not main_menu:
+            imagebutton auto ("gui/gamemenu//save_%s.png") action ShowMenu("save")
+        imagebutton auto ("gui/gamemenu//load_%s.png") action ShowMenu("load")
+        imagebutton auto ("gui/gamemenu/config_%s.png") action ShowMenu("preferences")
+        if _in_replay:
+            textbutton _("End Replay") action EndReplay(confirm=True)
+        elif not main_menu:
+            imagebutton auto ("gui/gamemenu/menu_%s.png") action MainMenu()
+    
+    if renpy.variant("pc"):                                  
+                imagebutton auto ("gui/gamemenu/return_%s.png") action Return() xpos 30 yalign 0.9
+
+
+
+screen game_menu(title, scroll=None, yinitial=0.0):    
 
     style_prefix "game_menu"
 
@@ -460,17 +483,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
+    use game_menunav
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
+
+
 
 
 style game_menu_outer_frame is empty

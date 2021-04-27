@@ -64,7 +64,7 @@ define gui.name_text_font = "MontserratAlternates-Bold.ttf"
 define gui.interface_text_font = "Raleway-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 27
 
 ## The size of character names.
 define gui.name_text_size = 45
@@ -104,8 +104,8 @@ define gui.textbox_yalign = 0.96
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 250
-define gui.name_ypos = -40
+define gui.name_xpos = 500
+define gui.name_ypos = -12
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -128,11 +128,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 300
-define gui.dialogue_ypos = 70
+define gui.dialogue_xpos = 470
+define gui.dialogue_ypos = 90
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1400
+define gui.dialogue_width = 1200
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -186,9 +186,9 @@ define gui.confirm_button_text_xalign = 0.5
 
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
-define gui.quick_button_borders = Borders(15, 6, 15, 0)
+define gui.quick_button_borders = Borders(30, 6, 15, 0)
 define gui.quick_button_text_size = 21
-define gui.quick_button_text_idle_color = gui.idle_small_color
+define gui.quick_button_text_idle_color = "#FFFFFF"
 define gui.quick_button_text_selected_color = gui.accent_color
 
 ## You can also add your own customizations, by adding properly-named variables.
@@ -279,7 +279,7 @@ define gui.main_menu_text_xalign = 1.0
 ## Frames ######################################################################
 ##
 ## These variables control the look of frames that can contain user interface
-## components when an overlay or window is not present.
+## components when an d or window is not present.
 
 ## Generic frames.
 define gui.frame_borders = Borders(6, 6, 6, 6)
@@ -424,7 +424,7 @@ init python:
     if renpy.variant("small"):
 
         ## Font sizes.
-        gui.text_size = 45
+        gui.text_size = 30
         gui.name_text_size = 54
         gui.notify_text_size = 38
         gui.interface_text_size = 45

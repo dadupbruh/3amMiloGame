@@ -1,18 +1,17 @@
 ﻿#This is the beggining of the script for the game 3amMilo.
 
 #Characters---------------------
-define c = Character("Corie")
-define ca = Character("Cara")
-define m = Character("Milo")
-
-define e = Character("Eileen")
-
+define c = Character("Corie", image = "corie")
+define ca = Character("Cara", image = "cara")
+define m = Character("Milo", image = "milo")
+image side milo nuetral = "milo/nuetral.png"
 #Script-------------------------
 label start:
-    scene bg room
-
-    show eileen happy
-
-    e "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
+    
+    scene m room
+    show cara nuetral 
+    ca "Welcome to the Sandbox Development Build of 3amMilo."
+    ca "Added 2 new backgrounds and one fullbody sprite for reference."
+    m nuetral "As well as this, is a place holder side sprite for Milo."
+    ca "You can acess these files via the automatic names given. Cara's room is {b}c bed{/b} , Milo's room is {b}m room{/b}, and Cara's sprites are {b}cara nuetral.{/b}"
     return
