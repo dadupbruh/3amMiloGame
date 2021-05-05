@@ -7,7 +7,7 @@ define m = Character("Milo", image = "milo")
 image side milo nuetral = "milo/nuetral.png"
 #Script-------------------------
 label start:
-    
+
     scene m room with fade
     $ renpy.set_tag_attributes("milo nuetral")
     "Good ol’ canada."
@@ -41,7 +41,7 @@ label start:
     "She was there when I came out to my parents as well, she held my hand as I slowly let the words flow. If it weren’t for Cara.."
     "I don’t think I would have the courage to tell my parents anything. "
     "I remember when people used to think we were dating in highschool, although I do admit, I did have the smallest crush on Cara."
-    "But it went away after a week when I realised that we were better off as friends." 
+    "But it went away after a week when I realised that we were better off as friends."
     ca "MILOOOOOO!!"
     scene livingroom with fade
     show cara nuetral with dissolve
@@ -69,6 +69,7 @@ label start:
     m "Okay fine."
     ca "So it's a date! See you then Mr Zhang.." ##exicted
     "Cara batted her eyelids once more while pointing finger guns at me, she truly was a piece of work."
+    "ah"
 
 label test:
     scene co bed with fade
