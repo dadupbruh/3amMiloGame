@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 429: Line is indented, but the preceding null statement does not expect a block. Please check this line's indentation.
-    imagebutton auto ("gui/gamemenu/return_%s.png") action Return()  
-    ^
+File "game/script.rpy", line 11: end of line expected.
+    scene m room with fade 2.0
+                           ^
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Tue Apr 27 19:44:32 2021
+Tue May  4 20:51:03 2021
