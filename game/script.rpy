@@ -1,10 +1,13 @@
 ﻿#This is the beggining of the script for the game 3amMilo.
 
 #Characters---------------------
-define c = Character("Corie", image = "corie")
+define c = DynamicCharacter("Corie", image = "corie")
 define ca = Character("Cara", image = "cara")
 define m = Character("Milo", image = "milo")
 image side milo nuetral = "milo/nuetral.png"
+
+##Variables (This will determine the ending)------
+$ coriepoints = 0
 #Script-------------------------
 label start:
 
@@ -69,7 +72,65 @@ label start:
     m "Okay fine."
     ca "So it's a date! See you then Mr Zhang.." ##exicted
     "Cara batted her eyelids once more while pointing finger guns at me, she truly was a piece of work."
-    "ah"
+    scene m room with fade
+    $ renpy.set_tag_attributes("milo nuetral")
+    "I slowly walked back into my room, stumbling over a few notebooks that I needed for today's classes."
+    "In uni, I decided to major in Psychology whilst minoring in biology. It's a rough study, psychology, but I'm used to it." 
+    "After all, I am in my sophomore year, in a year's time I'll be graduating."
+    "Soon enough we got ready, and headed for classes. "
+    "I met Cara by the door and we headed out, and went down to the elevator to make our usual walk to campus. "
+    scene recep with fade
+    $ renpy.set_tag_attributes("milo nuetral")
+    show cara nuetral at better_left with dissolve
+    show corie nuetral at better_right with dissolve
+    "When suddenly we heard the liveliness coming from the reception that probably shouldn't be due until later this morning.." 
+    $ Corie = "???"
+    c "I thought I saw on the contract that we could keep pets?"
+    "Reception" "I'm sorry, that's not allowed."
+    c "What do you mean by that?"
+    "I couldn't help but eavesdrop onto the mysterious figure arguing with the receptionist, Miss Margot. "
+    "Cara also seemed to be intrigued as she stopped next to me and clung onto my shoulder."
+    "Reception" "I'm sorry Mr Rosario, but this complex has strictly no pets allowed."
+    "Reception" "Just because your parents have paid a greater amount for our luxury apartment doesn't mean you are exempt from this condition."
+    c "Then what do I do with them ?? Are you really going to make me abandon my babies? "
+    "Reception" "That's on you now."
+    "I looked to my side, making eye contact with Cara. Before I could say anything, I looked back to the frustrated cat lover, who was now looking towards our direction. "
+    "Or more so, me."
+    "I observed the new person, as they sighed reluctance."
+    c "I'll come back soon."
+    "Reception" "Thank you for understanding. "
+    "But the new person didn't exactly look like they 'understood'."
+    hide corie nuetral with dissolve
+    show cara nuetral at center with ease
+    "They simply stormed out of the building, both hands holding cat carriers, like they were prized luggage."
+    ca "So that's the new person moving in. What do you think of them Milo?"
+
+    menu:
+        "They're interesting.": 
+            m "I think it might add something new here. "
+            ca "Well someone has to see the positives in a situation. "
+
+        "I think they might cause some problems.":
+            "Cara raised an eyebrow. But simply nodded."
+
+        "They're hot not gonna lie.": 
+            "Cara's eyes widened. Her mouth formed into a small pout."
+            ca "Oh?"
+
+    m "Either way, we don't have time for this. You have your shift at the cat cafe, I need to pick up my food and quickly get to campus somehow.."
+    ca "Yeah yeah, whatever. You're such a killjoy, Milo. "
+    "Cara stuck her tongue out and blew a raspberry, she then started to speed walk, leaving me behind. "
+    m "You are such a baby carssss wait up !!"
+    scene uni with fade
+    $ renpy.set_tag_attributes("milo nuetral")
+    "We got to the cat cafe and I dropped Cara off, and in exchange I got my usual order, a brownie and an iced coffee, before getting into campus." 
+    ca "See ya later at lunch?"
+    m "Mhm, get to class in time, I can help you study."
+    "I arrived just in time for my first class of the day, rushing into the lecture hall without much grace."
+    "The packed lecture hall was less than desired but it was enough. Soon the day rolled past and I met up with Cara again just in time for both of our breaks."
+    "I saw her sit at our usual spot at the back of the lunch hall. She gave a insistant wave down."
+    ca "Over here!"
+
 
 label test:
     scene co bed with fade

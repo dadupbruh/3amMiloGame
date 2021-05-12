@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 11: end of line expected.
-    scene m room with fade 2.0
-                           ^
+File "game/script.rpy", line 74: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "Cara batted her eyelids once more while pointing finger guns at me, she truly was a piece of work.
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Tue May  4 20:51:03 2021
+Thu May 13 10:51:58 2021
